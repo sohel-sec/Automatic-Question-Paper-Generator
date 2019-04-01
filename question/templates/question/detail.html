@@ -1,0 +1,67 @@
+{% extends 'question/base.html' %}
+{% block question_active %}active{% endblock %}
+
+{% block body %}
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+th {
+  background-color: #0B2270;
+  color: white;
+}
+</style>
+
+{% if object_list %}
+<div style=" color:#700B16; text-align:center; font-size:25px; ">All Questions</div>
+<table style="width:150%">
+    <tr>
+    <th>Question_ID</th>
+    <th>Author</th>
+    <th>Questions</th>
+    <th>Marks</th>
+     <th>Access modifier</th>
+     <th>Is Favouite</th>
+    </tr>
+
+        {% for curr_question in object_list %}
+            <tr>
+                <td>{{ forloop.counter }} </td>
+                <td>{{ curr_question.author }} </td>
+                <td>{{curr_question.question_text}}</td>
+                <td>{{curr_question.marks }}</td>
+                <td>{{curr_question.access_modifier}}</td>
+
+                <td>
+                    {%if curr_question.is_covered %}
+                        No
+                    {% else %}
+                        Yes
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+
+</table>
+{% else %}
+     <a style="color:#4B0082;" href="{% url 'question:q-add'%}">
+         <h4>Add a New question</h4></a>
+{% endif %}
+{% endblock %}
+
+

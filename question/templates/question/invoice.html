@@ -1,0 +1,110 @@
+
+    <head>
+        <title>New Question</title>
+        <style type="text/css">
+            body {
+                font-weight: 200;
+                font-size: 14px;
+            }
+            .header {
+                font-size: 15px;
+                font-weight: 100;
+                text-align: center;
+               /* color: #007cae;
+            }
+            .title {
+                font-size: 22px;
+                font-weight: 100;
+               /* text-align: right;*/
+               padding: 10px 20px 0px 20px;
+            }
+            .title span {
+                color: #007cae;
+            }
+            .details {
+                padding: 10px 20px 0px 20px;
+                text-align: left !important;
+                /*margin-left: 40%;*/
+            }
+
+            span{
+                float:right;
+            }
+
+            .instituion{
+                  font-size: 19px;
+                  font-weight: 100;
+                  text-align: center;
+            }
+            .deptname{
+                  font-size: 15px;
+                  text-align: center;
+            }
+            .coursetitle{
+                 font-size: 13px;
+                  text-align: center;
+            }
+            .others{
+                  font-size: 12px;
+                  text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+    <div class="boxes">
+        <div class="instituion">{{ instituion_name }}</div>
+        <div class="deptname"> Department of {{ department_name }}<br/> {{ exam_name }}</div>
+        <div class="coursetitle"> Course Title:{{ course_title }}</div>
+        <div class="others">Course Code:{{ course_code }} &nbsp;&nbsp;  Time: {{time}} &nbsp;&nbsp;
+        Full marks: {{ marks_answered }}</div>
+</div>
+     <hr>
+            N.B.:(i) Answer any {{to_be_answerd}} questions &nbsp;&nbsp;
+            (ii) Special Instruction(if any)----------------------------N/A---------------------------
+    <hr>
+        <div>
+            {% block body %}
+
+            <!--Author Question-->
+           <!--
+             {% if author_question %}
+
+            {%for curr_question in author_question %}
+                <div>
+                  ( {{ forloop.counter }} )  {{curr_question.question_text}} &nbsp; &nbsp;
+                    {{curr_question.marks}}
+                </div>
+            {% endfor %}
+            {% endif %}
+        -->
+            <!--Others Questions-->
+          <!--
+            {% if author_question %}
+             {% for curr_question in all_question %}
+                <div>
+                    <span style="position:absolute;margin-top:-90px;"> ( {{ forloop.counter }} ) {{ curr_question.question_text }}  </span>
+
+                    <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ curr_question.marks }}</span>
+                </div>
+            {% endfor %}
+             {% endif %}
+             -->
+
+
+            <!--Temp Questions-->
+
+             {% if temp_question %}
+             {% for curr_question in temp_question %}
+                <div>
+                    <span style="position:absolute;margin-top:-90px;"> ( {{ forloop.counter }} ) {{ curr_question.question_text }}  </span>
+
+                    <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ curr_question.marks }}</span>
+                </div>
+            {% endfor %}
+             {% endif %}
+
+
+            {% endblock %}
+        </div>
+    </body>

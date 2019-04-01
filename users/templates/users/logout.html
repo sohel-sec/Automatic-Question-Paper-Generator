@@ -1,0 +1,26 @@
+{% extends "question/base.html" %}
+{% block body %}
+<style>
+   .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   height: 80px;
+   width: 100%;
+   background-color: #000000;
+   color: white;
+   text-align: center;
+}
+</style>
+    <h2>You have been logged out!</h2>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="{% url 'login' %}" style="color:#810D0D;"><h4>Log In Again</h4></a>
+        </small>
+    </div>
+<div class="footer">
+    <p>Developed by Sohel Ahmed  and Md. Rabbani Nahid </p>
+    <p>&copy; All rights reserved</p>
+    </div>
+
+{% endblock  %}

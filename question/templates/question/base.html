@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question paper generator..</title>
+    {% load staticfiles %}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'question/style.css' %}">
+
+</head>
+<body>
+<style>
+    .navbar{
+        position:fixed;
+        z-index:1000;
+        width:100%;
+    }
+
+</style>
+ <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+            </div>
+
+          <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{% url 'question:index' %}">Home</a></li>
+                    <li class=""><a href="{% url 'question:q-list' %}">Questions</a> </li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'help' %}">Help</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </ul>
+                <form class="navbar-form navbar-left" role="search" method="get" action="#">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="q" value="">
+                    </div>
+                   <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                        <a href="{% url 'question:q-add'%}">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Add Question
+                        </a>
+                    </li>
+
+                    <li class="">
+                        <a href="{% url 'question:q' %}">
+                            <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;GenerateQuestion</a>
+                    </li>
+                    <li>
+                         <div class="navbar-nav">
+
+
+
+              {% if user.is_authenticated %}
+                             {% if user.is_superuser %}
+                                 <a class="nav-item nav-link" href="/admin">Admin Page</a>
+                             {% else %}
+                                <a class="glyphicon glyphicon-user" href="{% url 'profile' %}">Profile</a>
+                               {% endif %}
+
+                <a class="glyphicon glyphicon-off" href="{% url 'logout' %}">Logout</a>
+              {% else %}
+                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+              {% endif %}
+                </div>
+                    </li>
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+        <div class="col-md-8" style="margin-top:50px;">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+         {% block body %}{% endblock %}
+        </div>
+
+</body>
+
+
+</html>

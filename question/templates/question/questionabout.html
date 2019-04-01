@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+{% extends 'question/base.html' %}
+
+<html lang="en">
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <title>Set exam qustion paper</title>
+
+</head>
+<body>
+<div style="margin-top:20px;">
+
+    <div class="col-md-2"></div>
+    <div class="col">
+
+<form action="/question/question/pdf" style="margin-left:50%;">
+
+    <label for="">Institution name</label>
+<input type="text" class="form-control" name="institution_name" placeholder=" Sylhet Engineering College, Sylhet">
+
+    <label for="">Department name</label>
+<input type="text" class="form-control" name="department_name" placeholder="Computer Scinece & Technology">
+
+    <label for="">Examination name</label>
+<input type="text" class="form-control" name="exam_name" placeholder="3rd year 1st Semester Final Examination, 2019">
+
+    <label for="">Course Title</label>
+    <input type="text"  class="form-control" name="course_title" placeholder="Database Management System" >
+
+      <label for="">Course Code</label>
+     <input type="text" class="form-control"  name="course_code" placeholder="CSE 501">
+
+    <label for="">Total Marks in have question</label>
+     <input type="text" class="form-control"  name="marks"  placeholder="105" >
+
+    <label for="">Total Marks to be answerd</label>
+     <input type="text" class="form-control"  name="marks_answered"  placeholder="70" >
+
+
+    <label for="">Times</label>
+     <input type="text" class="form-control"  name="time"  placeholder="3:00 (Three) hours">
+
+
+    <label for="">Total questions</label>
+     <input type="text" class="form-control" name="total_questions" placeholder="6">
+
+
+    <label for="">To be answerd</label>
+     <input type="text" class="form-control" name="to_be_answerd" placeholder="4">
+
+    <button class="btn btn-primary" style="margin-top:20px;" type="submit">Submit</button>
+
+
+</form>
+
+
+    </div>
+    <!--<div class="col-md-2"></div>-->
+
+
+</div>
+</body>
+{% endblock %}
+</html>
