@@ -14,6 +14,9 @@
 </head>
 <body>
 <style>
+    body{
+        background:lightblue;
+    }
     .navbar{
         position:fixed;
         z-index:1000;
@@ -58,6 +61,12 @@
                         <a href="{% url 'question:q' %}">
                             <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;GenerateQuestion</a>
                     </li>
+                    <li>
+                        <a href="{% url 'question:edit'%}">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Edit
+                        </a>
+                    </li>
+
                     <li>
                          <div class="navbar-nav">
 

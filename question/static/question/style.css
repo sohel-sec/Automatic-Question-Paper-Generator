@@ -1,6 +1,6 @@
 body {
     position: relative;
-    background: lightblue no-repeat fixed center;
+    background: red;
 }
 
 ul.errorlist {
@@ -21,11 +21,13 @@ ul.errorlist > li {
 }
 
 .glyphicon-star {
-    color: #CCCCCC;
+    color: white;
     font-size: 16px;
 }
 
 .glyphicon-star.active {
     color: #FDB230;
 }
+
+
 

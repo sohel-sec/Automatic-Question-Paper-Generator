@@ -1,0 +1,119 @@
+{% extends 'question/base.html' %}
+{% block question_active %}active{% endblock %}
+
+{% block body %}
+<style>
+body{
+    background:white;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+
+table {
+   background:lightblue;
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+th {
+  background-color: #0B2270;
+  color: white;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+<form action="" method="post">
+    {%csrf_token %}
+
+
+
+{% if temp %}
+    <div style="margin-top:25px; margin-bottom:10px;text-align:center; font-size:25px;" ><b>ALL QUESTIONS</b></div>
+<table style="width:150%">
+    <tr>
+    <th>Question_ID</th>
+    <th>Select</th>
+    <th>Author</th>
+    <th>Questions</th>
+    <th>Marks</th>
+     <th>Access modifier</th>
+     <th>Is Favouite</th>
+    </tr>
+
+        {% for curr_question in temp %}
+            <tr>
+
+                <td>{{ forloop.counter }} </td>
+                <td>
+                    <select name="{{ curr_question.id }}" id="">
+                        <!--<option value=""selected></option>-->
+                        <!--<option value="1a">1a</option>-->
+                        <!--<option value="2a">2a</option>-->
+                        <!--<option value="3a">3a</option>-->
+                        <!--<option value="4a">4a</option>-->
+                        <option value="" selected></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+
+                    </select>
+                    <select name="_{{ curr_question.id  }}" id="">
+                        <option value="" selected></option>
+                        <option value="a">a</option>
+                        <option value="b">b</option>
+                        <option value="c">c</option>
+                        <option value="d">d</option>
+                        <option value="e">e</option>
+                        <option value="f">f</option>
+                    </select>
+                </td>
+                <td>{{ curr_question.author }} </td>
+                <td>{{curr_question.question_text}}</td>
+                <td>{{curr_question.marks }}</td>
+                <td>{{curr_question.access_modifier}}</td>
+
+                <td>
+                    {%if curr_question.is_covered %}
+                        No
+                    {% else %}
+                        Yes
+                    {% endif %}
+                </td>
+            </tr>
+        {% endfor %}
+
+
+</table>
+
+    <!--<button style="margin-top:20px; margin-bottom:40px;" class="btn btn-primary btn-block" type="submit">Submit</button>-->
+
+   <button class="btn btn-primary btn-lg" style="align:right;margin-top:20px; margin-bottom:40px; type="submit">Submit Question</button>
+
+{% endif %}
+    </form>
+
+{% endblock %}
+
+

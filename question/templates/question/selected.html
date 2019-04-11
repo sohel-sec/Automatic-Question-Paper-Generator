@@ -1,0 +1,37 @@
+{% extends 'question/base.html' %}
+{% block question_active %}active{% endblock %}
+
+{% block body %}
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+
+table {
+   background:lightblue;
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+th {
+  background-color: #0B2270;
+  color: white;
+}
+</style>
+
+
+
+
+
+{% endblock %}
+
+

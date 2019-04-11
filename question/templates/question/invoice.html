@@ -3,19 +3,20 @@
         <title>New Question</title>
         <style type="text/css">
             body {
+
                 font-weight: 200;
                 font-size: 14px;
+
             }
             .header {
                 font-size: 15px;
                 font-weight: 100;
                 text-align: center;
-               /* color: #007cae;
+
             }
             .title {
                 font-size: 22px;
                 font-weight: 100;
-               /* text-align: right;*/
                padding: 10px 20px 0px 20px;
             }
             .title span {
@@ -38,7 +39,7 @@
             }
             .deptname{
                   font-size: 15px;
-                  text-align: center;
+               text-align: center;
             }
             .coursetitle{
                  font-size: 13px;
@@ -51,12 +52,12 @@
 
         </style>
     </head>
-    <body>
+    <body >
     <div class="boxes">
         <div class="instituion">{{ instituion_name }}</div>
         <div class="deptname"> Department of {{ department_name }}<br/> {{ exam_name }}</div>
-        <div class="coursetitle"> Course Title:{{ course_title }}</div>
-        <div class="others">Course Code:{{ course_code }} &nbsp;&nbsp;  Time: {{time}} &nbsp;&nbsp;
+        <div class="coursetitle"> Course Title: &nbsp;{{ course_title }}</div>
+        <div class="others">Course Code: &nbsp;{{ course_code }} &nbsp;&nbsp;  Time: {{time}} &nbsp;&nbsp;
         Full marks: {{ marks_answered }}</div>
 </div>
      <hr>
@@ -66,43 +67,290 @@
         <div>
             {% block body %}
 
-            <!--Author Question-->
-           <!--
-             {% if author_question %}
+            {% if candidate.1.a.0 %}
+             <div style="text-align:center;">
+                <p><b><u>PART - A</u></b><br>(Answer any two question)</p>
 
-            {%for curr_question in author_question %}
-                <div>
-                  ( {{ forloop.counter }} )  {{curr_question.question_text}} &nbsp; &nbsp;
-                    {{curr_question.marks}}
+            </div>
+                1. <br>
+                {% if candidate.1.a.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (a) &nbsp; {{ candidate.1.a.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.1.a.0.marks }}</span>
                 </div>
-            {% endfor %}
+                {% endif %}
+
+                {% if candidate.1.b.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (b) &nbsp; {{ candidate.1.b.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.1.b.0.marks }}</span>
+                </div>
+                 {% endif %}
+                 {% if candidate.1.c.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (c) &nbsp; {{ candidate.1.c.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.1.c.0.marks }}</span>
+                </div>
+                {% endif %}
+            {% if candidate.1.d.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (d) &nbsp; {{ candidate.1.d.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.1.d.0.marks }}</span>
+                </div>
             {% endif %}
-        -->
-            <!--Others Questions-->
-          <!--
-            {% if author_question %}
-             {% for curr_question in all_question %}
-                <div>
-                    <span style="position:absolute;margin-top:-90px;"> ( {{ forloop.counter }} ) {{ curr_question.question_text }}  </span>
-
-                    <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ curr_question.marks }}</span>
+            {% if candidate.1.e.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (e) &nbsp; {{ candidate.1.e.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.1.e.0.marks }}</span>
                 </div>
-            {% endfor %}
-             {% endif %}
-             -->
+            {% endif %}
 
-
-            <!--Temp Questions-->
-
-             {% if temp_question %}
-             {% for curr_question in temp_question %}
-                <div>
-                    <span style="position:absolute;margin-top:-90px;"> ( {{ forloop.counter }} ) {{ curr_question.question_text }}  </span>
-
-                    <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ curr_question.marks }}</span>
+            {% if candidate.1.f.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (f) &nbsp; {{ candidate.1.f.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.1.f.0.marks }}</span>
                 </div>
-            {% endfor %}
-             {% endif %}
+            {% endif %}
+            {% endif %}
+
+
+            <!--Question 2-->
+
+
+
+        {% if candidate.2.a.0 %}
+                2. <br>
+                {% if candidate.2.a.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (a) &nbsp; {{ candidate.2.a.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.2.a.0.marks }}</span>
+                </div>
+                {% endif %}
+
+                {% if candidate.2.b.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (b) &nbsp; {{ candidate.2.b.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.2.b.0.marks }}</span>
+                </div>
+                 {% endif %}
+                 {% if candidate.2.c.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (c) &nbsp; {{ candidate.2.c.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.2.c.0.marks }}</span>
+                </div>
+                {% endif %}
+            {% if candidate.2.d.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (d) &nbsp; {{ candidate.2.d.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.2.d.0.marks }}</span>
+                </div>
+            {% endif %}
+            {% if candidate.2.e.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (e) &nbsp; {{ candidate.2.e.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.2.e.0.marks }}</span>
+                </div>
+            {% endif %}
+
+            {% if candidate.2.f.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (f) &nbsp; {{ candidate.2.f.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.2.f.0.marks }}</span>
+                </div>
+            {% endif %}
+            {% endif %}
+
+
+
+
+
+        {% if candidate.3.a.0 %}
+                3. <br>
+                {% if candidate.3.a.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (a) &nbsp; {{ candidate.3.a.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.3.a.0.marks }}</span>
+                </div>
+                {% endif %}
+
+                {% if candidate.3.b.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (b) &nbsp; {{ candidate.3.b.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.3.b.0.marks }}</span>
+                </div>
+                 {% endif %}
+                 {% if candidate.3.c.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (c) &nbsp; {{ candidate.3.c.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.3.c.0.marks }}</span>
+                </div>
+                {% endif %}
+            {% if candidate.3.d.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (d) &nbsp; {{ candidate.3.d.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.3.d.0.marks }}</span>
+                </div>
+            {% endif %}
+            {% if candidate.3.e.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (e) &nbsp; {{ candidate.3.e.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.3.e.0.marks }}</span>
+                </div>
+            {% endif %}
+
+            {% if candidate.3.f.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (f) &nbsp; {{ candidate.3.f.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.3.f.0.marks }}</span>
+                </div>
+            {% endif %}
+            {% endif %}
+
+
+
+
+
+        {% if candidate.4.a.0 %}
+             <div style="text-align:center;">
+                <p><b><u>PART - B</u></b><br>(Answer any two question)</p>
+
+            </div>
+                4. <br>
+                {% if candidate.4.a.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (a) &nbsp; {{ candidate.4.a.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.4.a.0.marks }}</span>
+                </div>
+                {% endif %}
+
+                {% if candidate.4.b.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (b) &nbsp; {{ candidate.4.b.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.4.b.0.marks }}</span>
+                </div>
+                 {% endif %}
+                 {% if candidate.4.c.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (c) &nbsp; {{ candidate.4.c.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.4.c.0.marks }}</span>
+                </div>
+                {% endif %}
+            {% if candidate.4.d.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (d) &nbsp; {{ candidate.4.d.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.4.d.0.marks }}</span>
+                </div>
+            {% endif %}
+            {% if candidate.4.e.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (e) &nbsp; {{ candidate.4.e.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.4.e.0.marks }}</span>
+                </div>
+            {% endif %}
+
+            {% if candidate.4.f.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (f) &nbsp; {{ candidate.4.f.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.4.f.0.marks }}</span>
+                </div>
+            {% endif %}
+            {% endif %}
+
+
+
+
+
+        {% if candidate.5.a.0 %}
+                5. <br>
+                {% if candidate.5.a.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (a) &nbsp; {{ candidate.5.a.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.5.a.0.marks }}</span>
+                </div>
+                {% endif %}
+
+                {% if candidate.5.b.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (b) &nbsp; {{ candidate.5.b.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.5.b.0.marks }}</span>
+                </div>
+                 {% endif %}
+                 {% if candidate.5.c.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (c) &nbsp; {{ candidate.5.c.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.5.c.0.marks }}</span>
+                </div>
+                {% endif %}
+            {% if candidate.5.d.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (d) &nbsp; {{ candidate.5.d.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.5.d.0.marks }}</span>
+                </div>
+            {% endif %}
+            {% if candidate.5.e.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (e) &nbsp; {{ candidate.5.e.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.5.e.0.marks }}</span>
+                </div>
+            {% endif %}
+
+            {% if candidate.5.f.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (f) &nbsp; {{ candidate.5.f.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.5.f.0.marks }}</span>
+                </div>
+            {% endif %}
+            {% endif %}
+
+
+
+
+
+        {% if candidate.6.a.0 %}
+                6. <br>
+                {% if candidate.6.a.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (a) &nbsp; {{ candidate.6.a.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.6.a.0.marks }}</span>
+                </div>
+                {% endif %}
+
+                {% if candidate.6.b.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (b) &nbsp; {{ candidate.6.b.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.6.b.0.marks }}</span>
+                </div>
+                 {% endif %}
+                 {% if candidate.6.c.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (c) &nbsp; {{ candidate.6.c.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.6.c.0.marks }}</span>
+                </div>
+                {% endif %}
+            {% if candidate.6.d.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (d) &nbsp; {{ candidate.6.d.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.6.d.0.marks }}</span>
+                </div>
+            {% endif %}
+            {% if candidate.6.e.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (e) &nbsp; {{ candidate.6.e.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.6.e.0.marks }}</span>
+                </div>
+            {% endif %}
+
+            {% if candidate.6.f.0 %}
+                 <div>
+                    <span style="position:absolute;margin-top:-90px;"> (f) &nbsp; {{ candidate.6.f.0.question_text }} </span>
+                     <span style="display:block;position:absolute;margin-top:-90px;  text-align: right;">{{ candidate.6.f.0.marks }}</span>
+                </div>
+            {% endif %}
+            {% endif %}
+
+
+
+
 
 
             {% endblock %}

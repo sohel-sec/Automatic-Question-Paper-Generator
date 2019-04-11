@@ -1,0 +1,18 @@
+{% extends 'question/base.html' %}
+{% block question_active %}active{% endblock %}
+
+{% block body %}
+
+<div style="">
+<form action="/question/udt/{{object.id }}" class="mr-auto ml-auto" style="margin-top:50px; margin-left:40%;" method="post"> {% csrf_token %}
+    <textarea name="q" class="form-control" id="" cols="30" rows="10" >{{object.question_text}}</textarea>
+    marks:<input class="form-control" type="text" name="m" value="{{object.marks}}"><br>
+    modifier:<input class="form-control" type="text" name="md" value="{{object.access_modifier}}">
+    <button class="btn btn-block btn-primary" style="margin-top:20px;" type="submit">Submit</button>
+</form>
+
+</div>
+
+{% endblock %}
+
+
