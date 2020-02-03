@@ -7,7 +7,7 @@ remaining questions can be taken randomly or by the choice of teacher.
 
 Worked with the following languages - Django, Bootstarp, HTML, CSS
 
-Project Supervisor:Enamul Hassan
-                   Assistant Professor
+Project Supervisor:Enamul Hassan,
+                   Assistant Professor,
                    Shahjalal University of Science and Technology, Sylhet-3114
 
