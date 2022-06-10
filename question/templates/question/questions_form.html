@@ -1,29 +1,31 @@
-{% extends 'question/base.html' %}
-{% load crispy_forms_tags %}
-{% block title%}Add a New Question {% endblock %}
-{% block question_active %} active {% endblock %}
-
+{% extends 'question/base.html' %} 
+{% load crispy_forms_tags %} 
+{% block title%}Add a New Question {% endblock %} 
+{% block question_active %} active {%endblock %} 
 {% block body %}
 <div class="container fluid">
-    <div class="row">
-        <div class="panel-heading"><h3>Please fill up this fields</h3></div>
-        <div class="col-sm-5 col-md-12">
-            <div class="panel panel-default">
-                <div class="panel">
-                    <form class="form-horinzontal"  action="" method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <div class="">
-                             {{ form|crispy }}
-                          <div class="col-sm-offset-2 col-sm-10 col-md-12">
-                                <button type="submit" class="btn btn-success">Submit</button>
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
+  <div class="row">
+    <div class="panel-heading"><h3>Please fill up this fields</h3></div>
+    <div class="col-sm-5 col-md-12">
+      <div class="panel panel-default">
+        <div class="panel">
+          <form
+            class="form-horinzontal"
+            action=""
+            method="post"
+            enctype="multipart/form-data"
+          >
+            {% csrf_token %}
+            <div class="">
+              {{ form|crispy }}
+              <div class="col-sm-offset-2 col-sm-10 col-md-12">
+                <button type="submit" class="btn btn-success">Submit</button>
+              </div>
             </div>
-         </div>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 {% endblock %}
-
